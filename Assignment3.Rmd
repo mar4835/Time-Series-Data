@@ -1,0 +1,33 @@
+---
+title: "Time Series Data: Average Amount Financed for New Car Loans"
+author: "Marleny Tochihuitl-Mendoza"
+date: "2025-02-16"
+output: html_document
+--- 
+#### 1: CSV file
+```{r}
+library(knitr)
+Avg.Financed.NewCarLoans <- read.csv("/Users/marleny/Downloads/Rutgers\ 24-25/TimeSeriesModeling/HW3/Avg.Financed.NewCarLoans.csv", header = TRUE)
+
+names(Avg.Financed.NewCarLoans)[1] <- "Date"
+names(Avg.Financed.NewCarLoans)[2] <- "Amount of Car Loan(Adjusted to Real Value in USD)"
+kable(Avg.Financed.NewCarLoans, caption = "Table: Avg. Financed New Car Loans")
+```
+
+#### 2: Data Dictionary 
+```{r}
+Variable <- c("Date", "Amount of Car Loans(Adjusted to Real Value in USD)")
+MeasurementUnit <- c("yy-mm-dd","numeric")
+AllowedValues <- c("2019-07-01 to 2024-07-01", "0 to 100000")
+Description <- c("Represents the time period for which the data is recorded(quarterly)","The average dollar amount borrowed by consumers when financing a new vehicle through finance companies")
+DataDictionary <- data.frame(Variable,MeasurementUnit,AllowedValues,Description)
+DataDictionary
+knitr::kable(DataDictionary,caption = "Table: Data Dictionary")
+```
+
+#### 3: Data Collection Methodology 
+##### The data is collected and published by the Board of Governors of the Federal Reserve, specifically the G.20 Finance Companies Report. The data is gathered from finance companies that provide auto loans. The average amount for new car loans is reported quarterly and the values are reported in U.S. dollars, representing the average amount financed for new vehicle loans. I adjusted the nominal amounts to real amounts by using the consumer price index.   
+
+
+#### 4: Why does this data set intrigue you? 
+##### I chose this dataset because I am interested in buying a new car and this data provides insight on how much people are borrowing to finance new cars, which can help me understand market trends and consumer behavior. An increasing trend in the average amount financed could mean rising car prices, changes in loan terms, or shifting consumer preferences toward more expensive cars If it's declining, it might mean people are borrowing less due to higher interest rates or economic uncertainty.
