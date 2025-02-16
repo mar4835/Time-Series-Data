@@ -1,2 +1,2 @@
 # Time-Series-Data
-Time series data for forecasting models on the average amount financed for new car loans 
+This repository contains the CSV file for the time series data: Average Amount Financed for New Car Loans and an Rmd file containing a data dictionary, a description of the collection methodology, and why I chose the dataset.
